@@ -2,10 +2,9 @@
 Scan continuous seismic data to exploit spatial coherency and detect earthquake.
 
 # Ceate a conda environment and install dependencies
-conda create -n seisscan
+conda create -n SeisScan
 
-conda activate seisscan
-
+conda activate SeisScan
 conda install -c conda-forge obspy dask jupyterlab pandas cartopy pyproj utm
 
 
