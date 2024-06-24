@@ -1,0 +1,266 @@
+[
+    {
+        "reference": "1002",
+        "reference_longitude": -97.739831,
+        "reference_latitude": 36.622301,
+        "reference_elevation": 322.3,
+        "secondaries": [
+            "1001",
+            "1003"
+        ],
+        "secondaries_longitude": [
+            -97.740955,
+            -97.738707
+        ],
+        "secondaries_latitude": [
+            36.622297,
+            36.622319
+        ],
+        "secondaries_elevation": [
+            322.2,
+            322.4
+        ],
+        "distances": [
+            100.5427841448625,
+            100.56162999542708
+        ],
+        "azimuths": [
+            -90.25261840895185,
+            88.86151542911878
+        ]
+    },
+    {
+        "reference": "1041",
+        "reference_longitude": -97.695875,
+        "reference_latitude": 36.622307,
+        "reference_elevation": 322.0,
+        "secondaries": [
+            "5019",
+            "5020",
+            "5025",
+            "5026"
+        ],
+        "secondaries_longitude": [
+            -97.695876,
+            -97.695879,
+            -97.696366,
+            -97.695607
+        ],
+        "secondaries_latitude": [
+            36.622611,
+            36.622005,
+            36.622436,
+            36.622448
+        ],
+        "secondaries_elevation": [
+            322.3,
+            321.7,
+            321.0,
+            322.8
+        ],
+        "distances": [
+            33.735175030632355,
+            33.51502353622889,
+            46.193978446002426,
+            28.62705713379998
+        ],
+        "azimuths": [
+            -0.15192134117223682,
+            -179.38830721468318,
+            -71.94705286476662,
+            56.86751789465447
+        ]
+    },
+    {
+        "reference": "1073",
+        "reference_longitude": -97.659963,
+        "reference_latitude": 36.622227,
+        "reference_elevation": 316.8,
+        "secondaries": [
+            "5004",
+            "5005",
+            "5012",
+            "5013"
+        ],
+        "secondaries_longitude": [
+            -97.659961,
+            -97.659972,
+            -97.660395,
+            -97.659636
+        ],
+        "secondaries_latitude": [
+            36.622506,
+            36.621926,
+            36.622306,
+            36.622386
+        ],
+        "secondaries_elevation": [
+            317.0,
+            316.5,
+            317.7,
+            316.3
+        ],
+        "distances": [
+            30.961308310562213,
+            33.41184275617752,
+            39.62437456407753,
+            34.15981960203877
+        ],
+        "azimuths": [
+            0.33106627697771973,
+            -178.6193321886787,
+            -77.21773123750593,
+            58.90061450512738
+        ]
+    },
+    {
+        "reference": "1128",
+        "reference_longitude": -97.598188,
+        "reference_latitude": 36.622466,
+        "reference_elevation": 318.5,
+        "secondaries": [
+            "1127",
+            "1129"
+        ],
+        "secondaries_longitude": [
+            -97.599312,
+            -97.597064
+        ],
+        "secondaries_latitude": [
+            36.62245,
+            36.622283
+        ],
+        "secondaries_elevation": [
+            317.3,
+            317.7
+        ],
+        "distances": [
+            100.5572742069566,
+            102.57209152928853
+        ],
+        "azimuths": [
+            -91.01138291290948,
+            101.41874857156462
+        ]
+    },
+    {
+        "reference": "2005",
+        "reference_longitude": -97.695918,
+        "reference_latitude": 36.633184,
+        "reference_elevation": 319.2,
+        "secondaries": [
+            "2004",
+            "2006"
+        ],
+        "secondaries_longitude": [
+            -97.695925,
+            -97.695914
+        ],
+        "secondaries_latitude": [
+            36.634091,
+            36.632278
+        ],
+        "secondaries_elevation": [
+            319.7,
+            320.3
+        ],
+        "distances": [
+            100.65245275935898,
+            100.54015607199284
+        ],
+        "azimuths": [
+            -0.3563799903107642,
+            179.7961229404143
+        ]
+    },
+    {
+        "reference": "2048",
+        "reference_longitude": -97.695919,
+        "reference_latitude": 36.594209,
+        "reference_elevation": 328.9,
+        "secondaries": [
+            "2047",
+            "2049"
+        ],
+        "secondaries_longitude": [
+            -97.695925,
+            -97.695914
+        ],
+        "secondaries_latitude": [
+            36.595115,
+            36.593528
+        ],
+        "secondaries_elevation": [
+            328.8,
+            329.1
+        ],
+        "distances": [
+            100.5403093194882,
+            75.57192629350905
+        ],
+        "azimuths": [
+            -0.3059627157191459,
+            179.66078398164612
+        ]
+    },
+    {
+        "reference": "3002",
+        "reference_longitude": -97.659952,
+        "reference_latitude": 36.635824,
+        "reference_elevation": 318.1,
+        "secondaries": [
+            "3001",
+            "3003"
+        ],
+        "secondaries_longitude": [
+            -97.660019,
+            -97.659943
+        ],
+        "secondaries_latitude": [
+            36.63673,
+            36.634917
+        ],
+        "secondaries_elevation": [
+            316.5,
+            318.9
+        ],
+        "distances": [
+            100.7179821919689,
+            100.6537534897058
+        ],
+        "azimuths": [
+            -3.4107221049410335,
+            179.54180603745033
+        ]
+    },
+    {
+        "reference": "3048",
+        "reference_longitude": -97.660125,
+        "reference_latitude": 36.594129,
+        "reference_elevation": 324.3,
+        "secondaries": [
+            "3047",
+            "3049"
+        ],
+        "secondaries_longitude": [
+            -97.660114,
+            -97.660157
+        ],
+        "secondaries_latitude": [
+            36.595035,
+            36.593523
+        ],
+        "secondaries_elevation": [
+            323.2,
+            324.5
+        ],
+        "distances": [
+            100.54369261320741,
+            67.30878399165485
+        ],
+        "azimuths": [
+            0.5609196433415892,
+            -177.56177571705712
+        ]
+    }
+]
