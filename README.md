@@ -2,8 +2,8 @@
 
 <!-- ![Description of image](./media/SMU_logo.png) -->
 
-<img src="images/SMU_logo.png" width="50" >
-<img src="images/SeisScan_fig.png" width="1000" >
+<img src="seisscan_example/SMU_logo.png" width="50" >
+<img src="seisscan_example/SeisScan_fig.png" width="1000" >
 
 **SeisScan** is an open source Python package to detect and locate microearthquakes. The method leverages the signal coherence across clusters of seismic stations to generate characteristic functions that are backprojected (migrated) to detect and locate seismic events.
 

@@ -24,8 +24,8 @@ extensions = [
     "sphinx_copybutton",
     # 'sphinx.ext.duration',
     # 'sphinx.ext.doctest',
-    # 'sphinx.ext.autodoc',
-    # 'sphinx.ext.autosummary',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
     # 'sphinx.ext.intersphinx',
 ]
 # autoapi_dirs = ["../src"]

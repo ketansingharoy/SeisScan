@@ -1,0 +1,6 @@
+﻿seisscan
+========
+
+.. automodule:: seisscan
+
+   

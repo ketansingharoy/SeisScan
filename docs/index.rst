@@ -9,7 +9,9 @@
 
    getting_started
    installation
+   data_structure
    example
+   api
    
 
 Citation
@@ -22,7 +24,8 @@ If you make use of this code in published work, please cite:
 License
 -------
 SeisScan is licensed under the terms of the MIT license.
-x
+
+
 Author:
 -------
 | Ketan Singha Roy
