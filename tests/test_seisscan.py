@@ -1,0 +1,1 @@
+from seisscan import seisscan

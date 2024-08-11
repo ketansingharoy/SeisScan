@@ -1,0 +1,12 @@
+# read version from installed package
+from importlib.metadata import version
+__version__ = version("seisscan")
+
+
+from seisscan.read_data.read_example import read_example
+from seisscan.imaging.waveform import prs
+from seisscan.waveform_similarity.local_similarity import do_ls
+from seisscan.backprojection.brightness import Brightness4, Stack
+from seisscan.backprojection.backprojection import do_bp, prepare_traveltime_lookup_table
+
+__all__ = ['read_example', 'prs', 'do_ls', 'prepare_traveltime_lookup_table', 'do_bp', 'Brightness4', 'Stack']

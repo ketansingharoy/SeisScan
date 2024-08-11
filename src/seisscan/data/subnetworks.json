@@ -1,0 +1,62 @@
+[
+    {
+        "reference": "1002",
+        "secondaries": [
+            "1001",
+            "1003"
+        ]
+    },
+    {
+        "reference": "1041",
+        "secondaries": [
+            "5019",
+            "5020",
+            "5025",
+            "5026"
+        ]
+    },
+    {
+        "reference": "1073",
+        "secondaries": [
+            "5004",
+            "5005",
+            "5012",
+            "5013"
+        ]
+    },
+    {
+        "reference": "1128",
+        "secondaries": [
+            "1127",
+            "1129"
+        ]
+    },
+    {
+        "reference": "2005",
+        "secondaries": [
+            "2004",
+            "2006"
+        ]
+    },
+    {
+        "reference": "2048",
+        "secondaries": [
+            "2047",
+            "2049"
+        ]
+    },
+    {
+        "reference": "3002",
+        "secondaries": [
+            "3001",
+            "3003"
+        ]
+    },
+    {
+        "reference": "3048",
+        "secondaries": [
+            "3047",
+            "3049"
+        ]
+    }
+]
