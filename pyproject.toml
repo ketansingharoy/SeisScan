@@ -2,12 +2,10 @@
 name = "seisscan"
 version = "0.1.0"
 description = "A package to detect and locate microearthquakes."
-authors = ["Ketan Singha Roy"]
+authors = ["Ketan Singha Roy <ketansingharoy@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [
-    { include = "seisscan_images" }
-]
+include = ["seisscan_images/**"]
 
 [tool.poetry.dependencies]
 python = ">=3.10"
@@ -29,6 +27,7 @@ jupyter = "^1.0.0"
 myst-nb = {version = "^1.1.1", python = "^3.10"}
 sphinx-autoapi = "^3.2.1"
 sphinx-rtd-theme = "^2.0.0"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
