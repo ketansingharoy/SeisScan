@@ -25,6 +25,7 @@ $ pip install seisscan
 conda create -n seisscan python=3.10
 conda activate seisscan
 conda -c conda-forge obspy=1.4.0 pandas=2.2.2 numpy=1.26.4 utm=0.7.0 dask=2024.8.0 distributed=2024.8.0 jupyter=1.0.0
+conda install seisscan
 ```
 
 ## Usage
