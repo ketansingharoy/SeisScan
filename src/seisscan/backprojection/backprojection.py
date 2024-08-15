@@ -30,6 +30,42 @@ from .brightness import Brightness4
 def prepare_traveltime_lookup_table(min_dist_k, max_dist_k, step_dist_k,
                                     min_dep_k, max_dep_k, step_dep_k,
                                     phase, model_name='iasp91', dask_client=None):
+    """Computes seismic wave travel time table.
+    
+    It computes seismic waves travel times for a given epicentral distance range, depth range and 1-D earth model. These travel times are used by the backprojection program.
+    
+    Parameters
+    ----------
+    min_dist_k: float
+        Minimum epicentral distance (km).
+    max_dist_k: float
+        Maximum epicentral distance (km).
+    step_dist_k: float
+        Epicentral distance increment (km).
+    min_dep_k: float
+        Minimum depth distance (km).
+    max_dep_k: float
+        Maximum depth distance (km).
+    step_dep_k: float
+        Depth increment (km).
+    phase: str
+        Seismic phase name. "P" or "S".
+    model_name: str
+        1-D earth model name. Default is 'iasp91'.
+    dask_client: dask.Client
+        A dask client for parallel processing.
+        
+    Returns
+    -------
+    dist_k_r1: numpy.ndarray of float
+        An array epicentral distances (km).
+    dep_k_r1: numpy.ndarray of float
+        An array deths (km).
+    tt_r2: numpy.ndarray of float
+        An travel times (seconds).
+    computation_time: float
+        Total time (seconds) taken by the cmputation.
+    """
 
     #--- model
     model = TauPyModel(model=model_name)
@@ -342,9 +378,7 @@ def do_bp(st_dls, dask_client, w,
          s_components=['N', 'E'],
          p_cor_dict=None,
          s_cor_dict=None):
-    
-    """
-    Perform backprojection to calculate 4-D brightness volume.
+    """Perform backprojection to calculate 4-D brightness volume.
     
     Parameters
     ----------
@@ -403,31 +437,8 @@ def do_bp(st_dls, dask_client, w,
         
     Returns
     -------
-    brightness4: SeisScan.
+    brightness4: seisscan.Brightness4
     """
-    
-    #--- prepare source grid
-    # min_lon, max_lon = -97.75, -97.59        # deg
-    # min_lat, max_lat = 36.59, 36.64          # deg
-    # min_dep, max_dep = 0, 15                 # km
-    # step_x, step_y, step_z = 0.25, 0.25, 0.25  # km
-    
-    #--- calculation of time window
-    # w = 0.25 # window size in seconds
-    # o = 0.0 # overlap fraction
-    # o = 0.5 # overlap fraction
-    # o = None # overlap fraction
-    
-    #--- positioon of the value on the time window
-    # pos = 'start' # 'start', 'mid', 'end'
-    
-    #--- components for calculation
-    # p_components = ['Z']
-    # s_components = ['N', 'E']
-    
-    # p_components = ['Z', 'N', 'E']
-    # s_components = ['Z', 'N', 'E']
-    
     
     
     #--- get sampling rate and interval

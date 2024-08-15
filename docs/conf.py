@@ -26,9 +26,15 @@ extensions = [
     # 'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
+    'sphinx.ext.autosectionlabel',
     # 'sphinx.ext.intersphinx',
 ]
 # autoapi_dirs = ["../src"]
+
+napoleon_google_docstring = False   # Turn off googledoc strings
+napoleon_numpy_docstring = True     # Turn on numpydoc strings
+napoleon_use_ivar = True 	     # For maths symbology
+autosummary_generate = True
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

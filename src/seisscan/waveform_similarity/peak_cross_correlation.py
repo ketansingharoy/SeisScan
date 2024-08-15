@@ -10,8 +10,7 @@ from dask.distributed import LocalCluster as dask_LocalCluster
 from seisscan.waveform_similarity.correlation import sliding_max_lagged_ncc
 
 def do_pcc_(st, channel, reference, secondary, w=1.0, dt=0.1, max_lag=0.1, pos='end', method=0):
-    '''
-    Create peak cross-correlation function between a reference and a secondary station.
+    '''Create peak cross-correlation function between a reference and a secondary station.
     
     Parameters
     ----------
@@ -135,8 +134,7 @@ def do_pcc_(st, channel, reference, secondary, w=1.0, dt=0.1, max_lag=0.1, pos='
 
 
 def do_pcc(st, channel, reference, secondaries=[], w=1.0, dt=0.1, max_lag=0.1, pos='end', method=0, dask_client=None):
-    '''
-    Create peak cross-correlation function between a reference and a list of secondary stations.
+    '''Create peak cross-correlation function between a reference and a list of secondary stations.
     
     Parameters
     ----------
@@ -162,11 +160,6 @@ def do_pcc(st, channel, reference, secondaries=[], w=1.0, dt=0.1, max_lag=0.1, p
         Possible values are 'start', 'mid' or 'end'.
         Default value is 'end'.
     method: int
-        One of the integer (0, 1, 2, 3). It determines type of normalized cross-correlation.
-        If method = 0, it returns C.
-        If method = 1, it returns |C|.
-        If method = 2, it returns C*C.
-        If method = 3, it returns C*|C|.
         Default method is 0.
         
     Returns
@@ -179,6 +172,18 @@ def do_pcc(st, channel, reference, secondaries=[], w=1.0, dt=0.1, max_lag=0.1, p
         Peak cross-correlation stream.
     st_dpcc: ObsPy.Stream
         Differentiated peak cross-correlation stream.
+        
+    Example
+    -------
+    >>> import seisscan as ss
+    >>>
+    >>> event_dict, st, inventory, subnetworks, model_name = ss.read_example()
+    >>>
+    >>> subnetwork = subnetworks[0]
+    >>> reference = subnetwork["reference"]
+    >>> secondaries = subnetwork["secondaries"]
+    >>>
+    >>> st_r, st_s, st_pcc, st_dpcc = ss.do_pcc(st, "DPZ", reference, subnetworks=subnetworks)
     '''
     #--- select stream
     st_sel = Stream()

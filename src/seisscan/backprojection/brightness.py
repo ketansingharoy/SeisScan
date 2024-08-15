@@ -90,12 +90,58 @@ def get_catalog(stack, bth, spacing=5.0):
 
 
 class Stack():
+    """A class for holding 1-D backprojected stack.
+    
+    This class provides methods to get backprojected solution, brightness stack, plot brightness slice etc.
+    
+    Attributes
+    ----------
+    b_r1: numpy.ndarray of floats
+        1-D numpy array of brightness values.
+    starttime: ObsPy.UTCDateTime
+        Starttime of the stack
+    bp_t0_r1: numpy.ndarray of floats
+        1-D numpy array origin times (seconds).
+    evlo_r1: numpy.ndarray of floats
+        1-D numpy array event longitudes (degree)
+    evla_r1: numpy.ndarray of floats
+        1-D numpy array event latitudes (degree)
+    evdp_r1: numpy.ndarray of floats
+        1-D numpy array event depths (km)
+        
+    Methods
+    -------
+    copy:
+        Returns a deepcopy of the 1-D stack.
+    trim:
+        Trims (cuts) the 1-D stack given a starttime and endtime
+    get_solution:
+        Returns event longitude, latitude, depth and brightness given an origin time.
+    get_times:
+        Returns a 1-D numpy array of times.
+    plot:
+        Plots backprojected stack on a matploib axes.
+    write:
+        Writes the stack in a pickle file.
+    """
 
     def __init__(self, b_r1, starttime, bp_t0_r1, evlo_r1, evla_r1, evdp_r1):
-        '''
-        Attributes: b_r1, starttime, bp_t0_r1, evlo_r1, evla_r1, evdp_r1
-
-        Method: get_times(reftime=None)
+        '''Initialize the Stack class.
+        
+        Parameters
+        ----------
+        b_r1: numpy.ndarray of floats
+             1-D numpy array of brightness values.
+        starttime: ObsPy.UTCDateTime
+            Starttime of the stack
+        bp_t0_r1: numpy.ndarray of floats
+            1-D numpy array origin times (seconds).
+        evlo_r1: numpy.ndarray of floats
+            1-D numpy array event longitudes (degree)
+        evla_r1: numpy.ndarray of floats
+            1-D numpy array event latitudes (degree)
+        evdp_r1: numpy.ndarray of floats
+            1-D numpy array event depths (km)
         '''
 
         self.b_r1 = b_r1
@@ -106,13 +152,25 @@ class Stack():
         self.evdp_r1 = evdp_r1
 
     def copy(self):
+        """Returns a deepcopy of the backprojected stack.
+        
+        Returns:
+        ClassName
+            A deepcopy of the current instance.
+        """
         return copy.deepcopy(self)
 
     def trim(self, t1, t2):
-        '''
-        t1: starttime (UTCDateTime)
-        t2: endtime (UTCDateTim)
-        '''
+        """Trims the backprojected stack given a starttime and endtime.
+        
+        Parameters
+        ----------
+        t1: ObsPy.UTCDateTime
+            A starttime.
+        t2: ObsPy.UTCDateTime
+            An endtime.
+        """
+        
         t1_ = t1 - self.starttime
         t2_ = t2 - self.starttime
         
@@ -126,6 +184,25 @@ class Stack():
         self.evdp_r1 = self.evdp_r1[idx]
 
     def get_solution(self, t=None):
+        """Computes and returns a solution for a given origin time.
+        
+        Parameters
+        ----------
+        t: None or float or ObsPy.UTCDateTime
+            A time that represents an event origin time. If None, it returns a solution corresponding to the maximum brightness. If float, it returns a solution corresponding to the time (t) relative to the starttime of the stack. If ObsPy.UTCDateTime, it returns a solution corresponding to the time. Default is None.
+            
+        Returns:
+        evt0: ObsPy.UTCDateTime
+            Represents origin time of the event.
+        evlo: float
+            Represents longitude (deg) of the event.
+        evla: float
+            Represents latitude (deg) of the event.
+        evdp: float
+            Represents depth (km) of the event.
+        b: float
+            Represents brightness of the event.
+        """
 
         if t == None:
             idx = np.argmax(self.b_r1)
@@ -146,9 +223,18 @@ class Stack():
         return evt0, evlo, evla, evdp, b
 
     def get_times(self, reftime=None):
-        '''
-        reftime = None (relative time, returns float numpy ndarray) or UTCDateTime object (returns matplotlib datenum numpy ndarray)
-        '''
+        """Computes and returns a numpy array of relative times given a reference time.
+        
+        Parameters
+        ----------
+        reftime: ObsPy.UTCDateTime
+            A reference time. Default is None. If None, it is the starttime of the stack.
+            
+        Returns
+        -------
+        times: numpy.ndarray of floats
+            An array of times relative to the reference time.
+        """
 
         if reftime == None:
             starttime_mpl = mdates.date2num(self.starttime)
@@ -160,7 +246,24 @@ class Stack():
         return times
 
     def plot(self, ax=None, ttype='relative', reftime=None, handle=False, **kwarg):
-        #color='k', ls='-', lw=0.5
+        """Plots the backprojected stack
+        
+        Parameters
+        ----------
+        ax: matplotlib.Axes
+            A matplotlib.Axes object. Default None.
+        ttype: str
+            Time type. Options are 'relative' and 'absolute'. Default is 'relative'.
+        reftime: ObsPy.UTCDateTime
+            A reference time. Default is None.
+        handle: bool
+            If True, returns a matplotlib.Figure object. Default is False
+        
+        Returns
+        -------
+        handle: matplotlib.Figure
+            S matplotlib.Figure object
+        """
 
         if ax == None:
             fig = plt.figure(figsize=(10,3))
@@ -190,6 +293,13 @@ class Stack():
             return fig
 
     def write(self, filename='brightness_stack.p'):
+        """Writes the backprojected stack in a pickle file.
+        
+        Parameters
+        ----------
+        filename: str
+            A filename to write the backprojected stack. Default is 'brightness_stack.p'
+        """
         pickle.dump(self, open(filename, 'wb'))
 
 
@@ -237,8 +347,7 @@ class Brightness4():
     """
 
     def __init__(self, B_r4, starttime, bp_t0_r1, lon_r1, lat_r1, z_r1):
-        """
-        Initializes the Brightness4 class with brightness values, time and space.
+        """Initializes the Brightness4 class with brightness values, time and space.
         
         Parameters
         ----------
@@ -269,8 +378,8 @@ class Brightness4():
         
         Returns
         -------
-        brightness4: SeisScan.Brightness4
-            A class for holding 4-D brightness values.
+        ClassName
+            A deepcopy of the current instance.
         """
         return copy.deepcopy(self)
 
@@ -280,7 +389,7 @@ class Brightness4():
         
         Returns
         -------
-        stack: SeisScan.Stack
+        stack: seisscan.Stack
             Backprojected stack time series.
         """
         

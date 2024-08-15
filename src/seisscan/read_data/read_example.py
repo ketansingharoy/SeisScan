@@ -5,8 +5,8 @@ from obspy import read_inventory
 from obspy.taup import taup_create
 
 def read_example():
-    """
-    Reads example data
+    """Reads example data.
+    
     This function returns Obspy.Stream, a list of reference_secondaries and a path to earth model.
     
     Returns
@@ -21,6 +21,11 @@ def read_example():
         A list of Subnetworks.
     model_name: str
         An earth model name (okl).
+        
+    Example
+    -------
+    >>> import seisscan as ss
+    >>> event_dict, st, inventory, subnetworks, model_name = ss.read_example()
     """
 
     #--- example data directory

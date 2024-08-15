@@ -49,17 +49,11 @@ def compute_dist_tt(dmin, dmax, evdp, phase, model_name='iasp91', dist_unit='km'
     return dist_array, tt_array
 
 
-def prs(st, evt0, evlo, evla, evdp, scale=0.5, ax=None, width=None, height=None,
-        xmin=None, xmax=None, phases=['p', 's'], model_name='iasp91',
-        w_color='k', w_lw=0.75, phase_colors=['b', 'g'], phase_lws=[0.75, 0.75],
-        xlabel_fs=12, ylabel_fs=12, title_fs=12, xticklabels_fs=10, yticklabels_fs=10,
-        legend=True, handle=False):
-    
-    """
-    Plot a record section of waveform stream.
+def prs(st, evt0, evlo, evla, evdp, scale=0.5, ax=None, width=None, height=None, xmin=None, xmax=None, model_name='iasp91', phases=['p', 's'], phase_colors=['b', 'g'], phase_lws=[0.75, 0.75], w_color='k', w_lw=0.75, xlabel_fs=12, ylabel_fs=12, title_fs=12, xticklabels_fs=10, yticklabels_fs=10, legend=True, handle=False):
+    """Plot a record section of waveform stream.
     
     Parameters
-    ---------
+    ----------
     st: ObsPy.Stream
         Waveform stream.
     evt0: ObsPy.UTCDateTime
@@ -72,17 +66,40 @@ def prs(st, evt0, evlo, evla, evdp, scale=0.5, ax=None, width=None, height=None,
         Event depth (km).
     scale: float
         A scale factor for waveform amplitude.
+    ax: matplotlib.Axes
+        A matplotlib.Axes instance. Default is None.
+    width: float
+        Width of figure.
+    height: float
+        Height of figure.
+    xmin: float
+        Time representing minimim value of x-axis. Default is None
+    xmax: float
+        Time representing maximum value of x-axis. Default is None
     model_name: str
-        An earth model name.
-        Default is "iasp91"
+        An earth model name. Default is "iasp91"
     phases: list of str
-        A list of seismic phases.
-        Default is ["p", "s"]
+        A list of seismic phases. Default is ["p", "s"]
     phase_colors: list of str
-        A list of colors.
-        Default is ["b", "g"]
-    ax: matplotlib.axes
-        Matplotlib axes object.
+        A list of colors representing travel time curve. Default is ["b", "g"]
+    phase_lws: list of float
+        Line width of travel time curves.
+    w_color: str
+        Waveform color.
+    w_lw: float
+        Waveform linewidth
+    xlabel_fs: float
+        Axes xlabel fontsize. Default is 12
+    ylabel_fs: float
+        Axes ylabel font size. Default is 12.
+    title_fs: float
+        Axes title fontsize. Default is 12.
+    xticklabels_fs: float
+        Axes xticklabels fontsize. Default is 10.
+    yticklabels_fs: float
+        Axes yticklabels fontsize. Default is 10.
+    legend: bool
+        If True, draws a legend.
     handle: bool
         If True, returns a matplotlib.Figure object.
         

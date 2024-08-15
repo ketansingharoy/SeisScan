@@ -4,7 +4,8 @@ from obspy.clients.fdsn import Client
 
 
 def read_fdsn(starttime, endtime, network, station, location, channel, provider="IRIS", attach_coordinates=True, attach_response=True):
-    """
+    """Download ObsPy.Stream with metada added from FDSN web service of IRIS.
+    
     Connects to FDSN web service of IRIS to retrive ObsPy Stream with station metadata added.
     Each Trace of the Stream object contains station coordinates and response information.
     It utilizes obspy.clients.fdsn.Client service to download waveform and inventory. For more information on the service, please visit
@@ -36,6 +37,16 @@ def read_fdsn(starttime, endtime, network, station, location, channel, provider=
     -------
     st: Obspy.Stream
         Waveform stream.
+        
+    Examples
+    --------
+    >>> from obspy import UTCDateTime
+    >>> import seisscan as ss
+    >>> 
+    >>> starttime = UTCDateTime("2010-02-27T06:45:00.000")
+    >>> endtime = starttime + 60
+    >>> 
+    >>> st = ss.read_fdsn(starttime, endtime, "IU", "ANMO", "00", "LHZ", provider="IRIS")
     """
     
     #--- client for FDSN web server
@@ -78,8 +89,8 @@ def read_fdsn(starttime, endtime, network, station, location, channel, provider=
 
 
 def read_fdsn_inventory(starttime, endtime, network, station, location, channel, provider="IRIS"):
-    """
-    Connects to FDSN web service of IRIS to retrive station Inventory.
+    """Connects to FDSN web service of IRIS to retrive station Inventory.
+    
     It utilizes obspy.clients.fdsn.Client service to download inventory.
     For more information on the service, please visit
     "https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.html#obspy.clients.fdsn.client.Client".
