@@ -34,6 +34,11 @@ def do_ls(st, channel, subnetworks=[], w=1.0, dt=0.1, max_lag=0.1, pos='end', me
         Possible values are 'start', 'mid' or 'end'.
         Default value is 'end'.
     method: int
+        One of the integer (0, 1, 2, 3). It determines type of normalized cross-correlation (cor).
+        If method = 0, it returns cor.
+        If method = 1, it returns |cor|.
+        If method = 2, it returns cor*cor.
+        If method = 3, it returns cor*|cor|.
         Default method is 0.
     dask_client: dask.Client
         A dask client for parallel processing.

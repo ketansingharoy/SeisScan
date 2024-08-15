@@ -36,11 +36,11 @@ def do_pcc_(st, channel, reference, secondary, w=1.0, dt=0.1, max_lag=0.1, pos='
         Possible values are 'start', 'mid' or 'end'.
         Default value is 'end'.
     method: int
-        One of the integer (0, 1, 2, 3). It determines type of normalized cross-correlation.
-        If method = 0, it returns C.
-        If method = 1, it returns |C|.
-        If method = 2, it returns C*C.
-        If method = 3, it returns C*|C|.
+        One of the integer (0, 1, 2, 3). It determines type of normalized cross-correlation (cor).
+        If method = 0, it returns cor.
+        If method = 1, it returns |cor|.
+        If method = 2, it returns cor*cor.
+        If method = 3, it returns cor*|cor|.
         Default method is 0.
         
     Returns
@@ -160,6 +160,11 @@ def do_pcc(st, channel, reference, secondaries=[], w=1.0, dt=0.1, max_lag=0.1, p
         Possible values are 'start', 'mid' or 'end'.
         Default value is 'end'.
     method: int
+        One of the integer (0, 1, 2, 3). It determines type of normalized cross-correlation (cor).
+        If method = 0, it returns cor.
+        If method = 1, it returns |cor|.
+        If method = 2, it returns cor*cor.
+        If method = 3, it returns cor*|cor|.
         Default method is 0.
         
     Returns
