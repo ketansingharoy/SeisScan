@@ -2,9 +2,11 @@ package:
   name: seisscan
   version: 0.1.0
 
+source:
+  path: dist/seisscan-0.1.0-py3-none-any.whl
+
 build:
-  number: 1
-  noarch: python
+  number: 2
 
 requirements:
   host:

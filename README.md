@@ -5,7 +5,7 @@
 <img src="seisscan_images/SMU_logo.png" width="50" >
 <img src="seisscan_images/SeisScan_fig.png" width="1000" >
 
-**SeisScan** is an open source Python package to detect and locate microearthquakes. This package adopts the method developed in the article [Roy et al., (2024)](#Citing). The method leverages the signal coherence across clusters of seismic stations to generate characteristic functions that are backprojected (migrated) to detect and locate seismic events.
+**SeisScan** is an open source Python package to detect and locate microearthquakes. This package adopts the method developed in the article [Roy et al., (2024)](#citing). The method leverages the signal coherence across clusters of seismic stations to generate characteristic functions that are backprojected (migrated) to detect and locate seismic events.
 
 For a tutorial on how to use the package, please refer to the documentation available on the website (ReadTheDocs).
 
@@ -22,10 +22,10 @@ $ pip install seisscan
 ### Install via Anaconda
 
 ```bash
-conda create -n seisscan python=3.10
-conda activate seisscan
-conda -c conda-forge obspy=1.4.0 pandas=2.2.2 numpy=1.26.4 utm=0.7.0 dask=2024.8.0 distributed=2024.8.0 jupyter=1.0.0
-conda install -c ksr22 seisscan
+$ conda create -n env_seis python=3.10
+$ conda activate env_seis
+$ conda -c conda-forge obspy=1.4.0 pandas=2.2.2 numpy=1.26.4 utm=0.7.0 dask=2024.8.0 distributed=2024.8.0 jupyter=1.0.0
+$ conda install -c ksr22 seisscan
 ```
 
 ## Usage
