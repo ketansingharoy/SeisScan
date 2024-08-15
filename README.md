@@ -5,7 +5,7 @@
 <img src="seisscan_images/SMU_logo.png" width="50" >
 <img src="seisscan_images/SeisScan_fig.png" width="1000" >
 
-**SeisScan** is an open source Python package to detect and locate microearthquakes. The method leverages the signal coherence across clusters of seismic stations to generate characteristic functions that are backprojected (migrated) to detect and locate seismic events.
+**SeisScan** is an open source Python package to detect and locate microearthquakes. This package adopts the method developed in the article [Roy et al., (2024)](#Citing). The method leverages the signal coherence across clusters of seismic stations to generate characteristic functions that are backprojected (migrated) to detect and locate seismic events.
 
 For a tutorial on how to use the package, please refer to the documentation available on the website (ReadTheDocs).
 
@@ -48,26 +48,13 @@ fig = ss.prs(st.select(channel="DPZ"),
              xmin=0.0, xmax=6.0, width=15, height=6, handle=True)
 ```
 
-<img src="images/prs_all_station_raw_DPZ.png" width="1000" >
+<img src="seisscan_images/prs_all_station_raw_DPZ.png" width="1000" >
 
 -----------------------------
------------------------------
-
-<!-- ## Contributing
-
-Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
-
------------------------------ -->
 
 ## License
 
-`SeisScan` was created by Ketan Singha Roy. It is licensed under the terms of the MIT license.
-
------------------------------
-
-## Credits
-
-`SeisScan` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+`SeisScan` is licensed under the terms of the MIT license.
 
 -----------------------------
 
@@ -83,7 +70,8 @@ Email: [ksingharoy@smu.edu](mailto:ksingharoy@smu.edu), [ketansingharoy@gmail.co
 
 -----------------------------
 
-## References
+## Citing
+If you make use of this code in published work, please cite:
 
 Ketan Singha Roy, Stephen Arrowsmith, Brian Stump, Chris Hayward, Junghyun Park; Exploiting Signal Coherence to Simultaneously Detect and Locate Earthquakes. Seismological Research Letters 2024; doi: [https://doi.org/10.1785/0220240089](https://doi.org/10.1785/0220240089)
 
