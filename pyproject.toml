@@ -5,6 +5,9 @@ description = "A package to detect and locate microearthquakes."
 authors = ["Ketan Singha Roy"]
 license = "MIT"
 readme = "README.md"
+packages = [
+    { include = "seisscan_images" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.10"
