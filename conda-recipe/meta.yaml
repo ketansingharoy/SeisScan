@@ -16,6 +16,7 @@ requirements:
     - "python==3.10"
     - pip
     - poetry
+    - "numpy==1.26.4"
   run:
     - "python==3.10"
     - "obspy==1.4.0"
