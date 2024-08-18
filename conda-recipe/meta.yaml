@@ -1,0 +1,40 @@
+package:
+  name: seisscan
+  version: "0.1.0"
+
+source:
+  # path: dist/seisscan-0.1.0-py3-none-any.whl
+  path: ../
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install --no-deps --ignore-installed ."
+
+requirements:
+  host:
+    - "python==3.10"
+    - pip
+    - poetry
+  run:
+    - "python==3.10"
+    - "obspy==1.4.0"
+    - dask
+    - cartopy
+    - distributed
+    - "pandas==2.2.2"
+    - utm
+    - "numpy==1.26.4"
+    - "ipykernel"
+    - "jupyter"
+    - "notebook"
+
+about:
+  home: https://github.com/ketansingharoy/SeisScan
+  license: MIT
+  license_file: LICENSE
+  summary: A package to detect and locate microearthquakes
+
+extra:
+  maintainer:
+    - Ketan Singha Roy <ketansingharoy@gmail.com>
